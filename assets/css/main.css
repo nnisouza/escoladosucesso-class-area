@@ -75,6 +75,8 @@ textarea {
     background-size: cover;
     
     box-sizing: border-box;
+    
+    display: none;
 }
 .box{
     background: #fff;
