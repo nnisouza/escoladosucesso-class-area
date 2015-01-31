@@ -16,7 +16,7 @@ function actions() {
     });
 }
 function afterLoaded() {
-    alert('Go!');
+    $('.wrapper').fadeIn('medium');
 }
 
 

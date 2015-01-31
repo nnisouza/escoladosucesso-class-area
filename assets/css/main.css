@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,600,500,900,700,800);
 html,
 button,
 input,
@@ -11,9 +12,11 @@ html {
     line-height: 1.4;
 }
 html,
-body{
+body,
+.wrapper{
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    font-family: 'Raleway';
 }
 
 ::-moz-selection {
@@ -66,11 +69,59 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-
-
-
-
+.wrapper{
+    padding: 20px;
+    background: url('../img/bg.jpg') center center;
+    background-size: cover;
+    
+    box-sizing: border-box;
+}
+.box{
+    background: #fff;
+    box-shadow: 0 -2px 7px -1px rgba(0,0,0,0.22);
+    box-sizing: border-box;
+}
+.wrapper .header{
+    width: 100%;
+    height: 52px;
+}
+.wrapper .header h1{
+    float: left;
+    display: inline-block;
+    height: 52px;
+    border-left: 5px solid;
+    margin: 0;
+    padding: 0 0 0 15px;
+    line-height: 52px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 400;
+    color: #909090;
+}
+.wrapper .header .userMenu{
+    height: 52px;
+    float: right;
+    list-style: none;
+}
+.wrapper .header .userMenu li{
+    display: inline;
+    margin-right: 18px;
+}
+.wrapper .header .userMenu li a{
+    color: #909090;
+    text-decoration: none;
+    font-size: 14px;
+}
+.wrapper .header .userMenu li a span i{
+    font-size: 16px;
+}
+.wrapper .content{
+    width: 100%;
+}
+.wrapper .content .sidebar{
+    width: 325px;
+    height: 100%;
+}
 
 
 
