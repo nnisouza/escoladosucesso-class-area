@@ -175,14 +175,16 @@ textarea {
 }
 .wrapper .content .sidebar .videoList ul li{
     height: 42px;
+/*
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+*/
 }
 .wrapper .content .sidebar .videoList ul li:hover{
-    background: #8ba77c;
+    background: rgba(139, 167, 124, 0.78);
 }
 .wrapper .content .sidebar .videoList ul li span.status{
     height; 42px;
@@ -192,18 +194,22 @@ textarea {
     line-height: 42px;
     display: block;
     box-sizing: border-box;
+/*
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+*/
 }
 .wrapper .content .sidebar .videoList ul li span.status i{
+/*
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+*/
 }
 .wrapper .content .sidebar .videoList ul li:hover span.status i{
     color: #fff;
@@ -220,11 +226,13 @@ textarea {
     padding-left: 10px;
     font-size: 16px;
     color: #909090;
+/*
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+*/
 }
 .wrapper .content .sidebar .videoList ul li:hover span.name{
     color: #fff;
@@ -248,11 +256,13 @@ textarea {
     text-align: center;
     font-size: 16px;
     line-height: 22px;
+/*
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+*/
 }
 .wrapper .content .sidebar .videoList ul li:hover span.timing span{
     background: #fff;
