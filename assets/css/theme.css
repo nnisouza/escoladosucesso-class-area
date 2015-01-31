@@ -1,4 +1,5 @@
-.wrapper .header h1{
+.wrapper .header h1,
+.wrapper .content .sidebar .sidebarHeader h2{
     border-color: #8ba77c;
 }
 
