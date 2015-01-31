@@ -5,9 +5,11 @@ function calc() {
     master.window.height = $(window).height();
     master.window.width = $(window).width();
     
-    $content = master.window.height - 112
+    $content = master.window.height - 112;
+    $container = master.window.width - 385;
     
     $('.content').height($content);
+    $('.container').width($container);
     
     drawPage();
 }

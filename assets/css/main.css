@@ -126,6 +126,7 @@ textarea {
 .wrapper .content .sidebar{
     width: 325px;
     height: 100%;
+    float: left;
 }
 .wrapper .content .sidebar .sidebarHeader{
     width: 100%;
@@ -172,6 +173,10 @@ textarea {
     height: auto;
     overflow: hidden;
     float: left;
+}
+.wrapper .content .container{
+    height: 100%;
+    float: right;
 }
 
 
