@@ -5,10 +5,15 @@ function calc() {
     master.window.height = $(window).height();
     master.window.width = $(window).width();
     
-    afterLoaded();
+    $content = master.window.height - 112
+    
+    $('.content').height($content);
+    
+    drawPage();
 }
 function drawPage() {
     
+    afterLoaded();
 }
 function actions() {
     cheet('s h a k e s p e a r e', function () {
@@ -21,6 +26,6 @@ function afterLoaded() {
 
 
 
-$(window).load(drawPage);
+$(window).load(calc);
 $(document).ready(actions);
 $(window).resize(calc).trigger('resize');
