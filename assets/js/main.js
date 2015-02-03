@@ -35,7 +35,7 @@ function actions() {
         });
         
         $(this).removeClass('invisible');
-        $(this).addClass('fadeInLeft animated');
+        $(this).addClass('fadeInUp animated');
         
     });
 }
