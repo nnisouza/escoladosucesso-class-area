@@ -3,10 +3,12 @@
     border-color: #8ba77c;
 }
 
-.fa{
+.watched .fa,
+.videoCtrl .fa,
+.userMenu .fa{
     color: #8ba77c;
 }
 
-.none{
+.noneYet{
     background-color: #8ba77c;
 }

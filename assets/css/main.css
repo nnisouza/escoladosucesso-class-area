@@ -203,13 +203,7 @@ textarea {
 */
 }
 .wrapper .content .sidebar .videoList ul li span.status i{
-/*
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-*/
+    color: #ccc;
 }
 .wrapper .content .sidebar .videoList ul li:hover span.status i{
     color: #fff;
@@ -226,13 +220,6 @@ textarea {
     padding-left: 10px;
     font-size: 16px;
     color: #909090;
-/*
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-*/
 }
 .wrapper .content .sidebar .videoList ul li:hover span.name{
     color: #fff;
