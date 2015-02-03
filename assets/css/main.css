@@ -209,6 +209,7 @@ textarea {
     padding-left: 10px;
     font-size: 16px;
     color: #909090;
+    overflow: hidden;
 }
 .wrapper .content .sidebar .videoList ul li:hover span.name{
     color: #fff;

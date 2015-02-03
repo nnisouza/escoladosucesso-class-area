@@ -26,11 +26,16 @@ function actions() {
     $('.videoList>ul>li').each(function() {
         var id = $(this).data('hash'),
             timer = $(this).find('.timing span'),
+            titler = $(this).find('.name'),
             ytapiurl    = 'http://gdata.youtube.com/feeds/api/videos/' + id + '?alt=json';
         
         $.getJSON(ytapiurl, function(data) {
             var time = formatSecondsAsTime(data['entry']['media$group']['media$content'][0]['duration']);
+            var title = data['entry']['media$group']['media$title']['$t'];
+            
+            console.log(title);
             timer.text(time);
+            titler.text(title);
         });
         
         $(this).removeClass('invisible');
@@ -39,11 +44,17 @@ function actions() {
     });
     
     $('.videoList>ul>li').click(function() {
-        var videoID = $(this).data('hash');
-        $('.container .videoHolder').fadeOut('slow', function() {
-            $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>');
-            $('.container .videoHolder').fadeIn('slow');
-        });
+        if ($(this).hasClass('active')){
+            return false;
+        } else {
+            var videoID = $(this).data('hash');
+            $('.container .videoHolder').fadeOut('medium', function() {
+                $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>');
+                setTimeout(function() {
+                    $('.container .videoHolder').fadeIn('medium');
+                }, 400)
+            });
+        }
     });
 }
 
