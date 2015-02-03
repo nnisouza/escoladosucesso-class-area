@@ -7,9 +7,11 @@ function calc() {
     
     $content = master.window.height - 112;
     $container = master.window.width - 385;
+    $videoList = $content - 52;
     
     $('.content').height($content);
     $('.container').width($container);
+    $('.videoList').height($videoList);
     
     drawPage();
 }
@@ -20,9 +22,6 @@ function actions() {
     cheet('s h a k e s p e a r e', function () {
       alert('Doubt thou the stars are fire; \nDoubt that the sun doth move; \nDoubt truth to be a liar; \nBut never doubt I love. \n                                                        - William Shakespeare');
     });
-    
-    
-    
     
     $('.videoList>ul>li').each(function() {
         var id = $(this).data('hash'),
@@ -37,6 +36,14 @@ function actions() {
         $(this).removeClass('invisible');
         $(this).addClass('fadeInUp animated');
         
+    });
+    
+    $('.videoList>ul>li').click(function() {
+        var videoID = $(this).data('hash');
+        $('.container .videoHolder').fadeOut('slow', function() {
+            $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>');
+            $('.container .videoHolder').fadeIn('slow');
+        });
     });
 }
 
