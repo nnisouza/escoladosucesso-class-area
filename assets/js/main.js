@@ -77,8 +77,47 @@ function actions() {
             });
         }
     });
+    
+    
+    startScroller();
+    
+    $('#down').click(nextItem);
+    $('#up').click(prevItem);
+    
+    
 }
 
+function startScroller() {
+    $('#scrollerMenu').css({
+        top: 0
+    });
+}
+function nextItem() {
+    var someTop = $('#scrollerMenu').css('top').replace('px','');
+    var someHeight = $('#scrollerMenu').height();
+    var otherHeight = $('.videoList').height();
+    var diferHeight = otherHeight - someHeight;
+    
+    if (diferHeight > someTop) {
+        
+        return false;
+    } else {
+        $('#scrollerMenu').animate({
+            top: "-=42"
+        }, 400);
+    }
+}
+function prevItem() {
+    var someTop = $('#scrollerMenu').css('top').replace('px','');
+    
+    if (someTop == 0) {
+        return false;
+    } else {
+        $('#scrollerMenu').animate({
+            top: "+=42"
+        }, 400);
+    }
+}
 
 function formatSecondsAsTime(secs) {
     var hr = Math.floor(secs / 3600);
