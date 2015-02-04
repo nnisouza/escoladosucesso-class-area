@@ -9,13 +9,25 @@ function calc() {
     $container = master.window.width - 385;
     $videoList = $content - 52;
     
+    if (master.window.width >= 950) {
+        $('.container').width($container);
+        $('body').removeClass('mobile');
+        $('.sidebar').show();
+    } else if (master.window.width < 950) {
+        $('.container').width('100%');
+        $('body').addClass('mobile');
+        $('.sidebar').hide();
+        
+    }
     $('.content').height($content);
-    $('.container').width($container);
     $('.videoList').height($videoList);
     
     drawPage();
 }
 function drawPage() {
+    $('.videoList>ul>li').first().addClass('first');
+    $('.videoList>ul>li').last().addClass('last');
+    
     afterLoaded();
 }
 function actions() {
@@ -40,23 +52,18 @@ function actions() {
         $(this).removeClass('invisible');
         $(this).addClass('fadeInUp animated');
         
+        
         var elVideoID = $(this).data('hash');
         if ($(this).hasClass('current')) {
-            $('.container .videoHolder').fadeOut('medium', function() {
-                $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + elVideoID + '?autoplay=1&showinfo=0" frameborder="0" allowfullscreen></iframe>');
-                setTimeout(function() {
-                    $('.container .videoHolder').fadeIn('medium');
-                }, 400)
-            });
+            
+            putItOnDOM(elVideoID);
+            
         } else {
             var elVideoID2 = $('.videoList>ul>li').eq('0').data('hash');
             $('.videoList>ul>li').eq('0').addClass('active');
-            $('.container .videoHolder').fadeOut('medium', function() {
-                $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + elVideoID2 + '?autoplay=1&showinfo=0" frameborder="0" allowfullscreen></iframe>');
-                setTimeout(function() {
-                    $('.container .videoHolder').fadeIn('medium');
-                }, 400)
-            });
+            
+            putItOnDOM(elVideoID2);
+            
         }
         
     });
@@ -69,12 +76,7 @@ function actions() {
             $('.videoList>ul>li').removeClass('active');
             $(this).addClass('active');
             var videoID = $(this).data('hash');
-            $('.container .videoHolder').fadeOut('medium', function() {
-                $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoID + '?autoplay=1&showinfo=0" frameborder="0" allowfullscreen></iframe>');
-                setTimeout(function() {
-                    $('.container .videoHolder').fadeIn('medium');
-                }, 400)
-            });
+            putItOnDOM(videoID);
         }
     });
     
@@ -85,12 +87,79 @@ function actions() {
     $('#up').click(prevItem);
     
     
+    $('#menuM').click(function() {
+        $('.sidebar').fadeToggle();
+    });
+    $('#prevV').click(function() {
+        if ($('.videoList>ul>li.active').hasClass('first')) {
+            return false;
+        } else {
+            var thisis = $('.videoList>ul>li.active').prev();
+            thisis.addClass('prospect');
+            $('.videoList>ul>li').removeClass('active');
+            $('.videoList>ul>li.prospect').addClass('active');
+            $('.videoList>ul>li.active').removeClass('prospect');
+            var nextVideoId = $('.videoList>ul>li.active').data('hash');
+            isActive();
+            putItOnDOM(nextVideoId);
+        }
+    });
+    
+    $('#nextV').click(function() {
+        if ($('.videoList>ul>li.active').hasClass('last')) {
+            return false;
+        } else {
+            var thisis = $('.videoList>ul>li.active').next();
+            thisis.addClass('prospect');
+            $('.videoList>ul>li.active').addClass('watched');
+            $('.videoList>ul>li').removeClass('active');
+            $('.videoList>ul>li.prospect').addClass('active');
+            $('.videoList>ul>li.active').removeClass('prospect');
+            var nextVideoId = $('.videoList>ul>li.active').data('hash');
+            isActive();
+            putItOnDOM(nextVideoId);
+        }
+    });
+    
+    function isActive() {
+        if($('.videoList>ul>li.active').hasClass('last')) {
+            $('#nextV').css('opacity','0.3');
+        } 
+        if (!$('.videoList>ul>li.active').hasClass('last')) {
+            $('#nextV').css('opacity','1');
+        }
+        if($('.videoList>ul>li.active').hasClass('first')) {
+            $('#prevV').css('opacity','0.3');
+        }
+        if (!$('.videoList>ul>li.active').hasClass('first')) {
+            $('#prevV').css('opacity','1');
+        }
+
+    }
+    
+}
+
+function putItOnDOM(theVideoId) {
+    $('.container .videoHolder').fadeOut('medium', function() {
+                $('.container .videoHolder').html('<iframe id="mainVideo" width="100%" height="100%" src="https://www.youtube.com/embed/' + theVideoId + '?autoplay=1&showinfo=0" frameborder="0" allowfullscreen></iframe>');
+                setTimeout(function() {
+                    $('.container .videoHolder').fadeIn('medium');
+                }, 400)
+            });
 }
 
 function startScroller() {
-    $('#scrollerMenu').css({
-        top: 0
-    });
+    var itemsL = $('#scrollerMenu li').length * 42,
+        videoListHeight = $('.videoList').height();
+    if (itemsL < videoListHeight) {
+        $('.videoCtrl').hide();
+    } else {
+        $('.videoCtrl').show();
+        $('.videoCtrl #up').css('opacity','0.3');
+        $('#scrollerMenu').css({
+            top: 0
+        });
+    }
 }
 function nextItem() {
     var someTop = $('#scrollerMenu').css('top').replace('px','');
@@ -99,23 +168,26 @@ function nextItem() {
     var diferHeight = otherHeight - someHeight;
     
     if (diferHeight > someTop) {
-        
+        $('.videoCtrl #down').css('opacity','0.3');
         return false;
     } else {
+        $('.videoCtrl #up').css('opacity','1');
         $('#scrollerMenu').animate({
             top: "-=42"
-        }, 400);
+        }, 200);
     }
 }
 function prevItem() {
     var someTop = $('#scrollerMenu').css('top').replace('px','');
     
-    if (someTop == 0) {
+    if (someTop >= 0) {
+        $('.videoCtrl #up').css('opacity','0.3');
         return false;
     } else {
+        $('.videoCtrl #down').css('opacity','1');
         $('#scrollerMenu').animate({
             top: "+=42"
-        }, 400);
+        }, 200);
     }
 }
 

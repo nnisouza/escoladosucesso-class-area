@@ -7,6 +7,7 @@
 .videoCtrl .fa,
 .userMenu .fa,
 .wrapper .content .sidebar .videoList ul li.watched .status i,
+.wrapper .header .mobileNavigation ul li i,
 .wrapper .content .sidebar .videoList ul li.active span.timing span,
 .wrapper .content .sidebar .videoList ul li:hover span.timing span{
     color: #e1b331;

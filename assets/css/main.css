@@ -89,6 +89,23 @@ textarea {
     height: 52px;
     margin-bottom: 20px;
 }
+.wrapper .header .mobileNavigation{
+    height: 52px;
+    float: left;
+    padding: 0px 20px;
+    display: none;
+}
+.wrapper .header .mobileNavigation ul{
+    padding: 0;
+}
+.wrapper .header .mobileNavigation ul li{
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.mobile .wrapper .header .mobileNavigation{
+    display: block;
+}
 .wrapper .header h1{
     float: left;
     display: inline-block;
@@ -122,11 +139,14 @@ textarea {
 }
 .wrapper .content{
     width: 100%;
+    position: relative;
 }
 .wrapper .content .sidebar{
     width: 325px;
     height: 100%;
     float: left;
+    position: absolute;
+    z-index: 10;
 }
 .wrapper .content .sidebar .sidebarHeader{
     width: 100%;
@@ -186,13 +206,13 @@ textarea {
     background: rgba(139, 167, 124, 0.78);
 }
 .wrapper .content .sidebar .videoList ul li span.status{
-    height; 42px;
     width: 44px;
     float: left;
     text-align: center;
-    line-height: 42px;
+    line-height: 41px;
     display: block;
     box-sizing: border-box;
+    border-bottom: 1px solid #fff;
 }
 .wrapper .content .sidebar .videoList ul li span.status i{
     color: #ccc;
