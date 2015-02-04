@@ -96,6 +96,7 @@ function actions() {
         } else {
             var thisis = $('.videoList>ul>li.active').prev();
             thisis.addClass('prospect');
+            $('.videoList>ul>li.active').addClass('watched');
             $('.videoList>ul>li').removeClass('active');
             $('.videoList>ul>li.prospect').addClass('active');
             $('.videoList>ul>li.active').removeClass('prospect');
