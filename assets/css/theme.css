@@ -1,14 +1,19 @@
 .wrapper .header h1,
 .wrapper .content .sidebar .sidebarHeader h2{
-    border-color: #8ba77c;
+    border-color: #e1b331;
 }
 
 .watched .fa,
 .videoCtrl .fa,
-.userMenu .fa{
-    color: #8ba77c;
+.userMenu .fa,
+.wrapper .content .sidebar .videoList ul li.watched .status i,
+.wrapper .content .sidebar .videoList ul li.active span.timing span,
+.wrapper .content .sidebar .videoList ul li:hover span.timing span{
+    color: #e1b331;
 }
 
-.noneYet{
-    background-color: #8ba77c;
+.wrapper .content .sidebar .videoList ul li:hover,
+.wrapper .content .sidebar .videoList ul li.active,
+.wrapper .content .sidebar .videoList ul li span.timing span{
+    background-color: #e1b331;
 }

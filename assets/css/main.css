@@ -178,6 +178,7 @@ textarea {
 }
 .wrapper .content .sidebar .videoList ul li{
     height: 42px;
+    cursor: pointer;
 }
 .wrapper .content .sidebar .videoList ul li:hover{
     background: rgba(139, 167, 124, 0.78);
@@ -194,7 +195,8 @@ textarea {
 .wrapper .content .sidebar .videoList ul li span.status i{
     color: #ccc;
 }
-.wrapper .content .sidebar .videoList ul li:hover span.status i{
+.wrapper .content .sidebar .videoList ul li:hover span.status i,
+.wrapper .content .sidebar .videoList ul li.active span.status i{
     color: #fff;
 }
 .wrapper .content .sidebar .videoList ul li span.name{
@@ -211,7 +213,8 @@ textarea {
     color: #909090;
     overflow: hidden;
 }
-.wrapper .content .sidebar .videoList ul li:hover span.name{
+.wrapper .content .sidebar .videoList ul li:hover span.name,
+.wrapper .content .sidebar .videoList ul li.active span.name{
     color: #fff;
 }
 .wrapper .content .sidebar .videoList ul li span.timing{
@@ -226,7 +229,6 @@ textarea {
     width: 50px;
     height: 22px;
     display: block;
-    background: #8ba77c;
     border-radius: 3px;
     color: #fff;
     margin: 10px auto;
@@ -241,7 +243,8 @@ textarea {
     transition: all 0.3s ease;
 */
 }
-.wrapper .content .sidebar .videoList ul li:hover span.timing span{
+.wrapper .content .sidebar .videoList ul li:hover span.timing span,
+.wrapper .content .sidebar .videoList ul li.active span.timing span{
     background: #fff;
     color: #8ba77c;
 }

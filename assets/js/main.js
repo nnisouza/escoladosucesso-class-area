@@ -33,13 +33,31 @@ function actions() {
             var time = formatSecondsAsTime(data['entry']['media$group']['media$content'][0]['duration']);
             var title = data['entry']['media$group']['media$title']['$t'];
             
-            console.log(title);
             timer.text(time);
-            titler.text(title);
+            titler.text(title.replace('Você Não Sabia? - ', ''));
         });
         
         $(this).removeClass('invisible');
         $(this).addClass('fadeInUp animated');
+        
+        var elVideoID = $(this).data('hash');
+        if ($(this).hasClass('current')) {
+            $('.container .videoHolder').fadeOut('medium', function() {
+                $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + elVideoID + '?autoplay=1&showinfo=0" frameborder="0" allowfullscreen></iframe>');
+                setTimeout(function() {
+                    $('.container .videoHolder').fadeIn('medium');
+                }, 400)
+            });
+        } else {
+            var elVideoID2 = $('.videoList>ul>li').eq('0').data('hash');
+            $('.videoList>ul>li').eq('0').addClass('active');
+            $('.container .videoHolder').fadeOut('medium', function() {
+                $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + elVideoID2 + '?autoplay=1&showinfo=0" frameborder="0" allowfullscreen></iframe>');
+                setTimeout(function() {
+                    $('.container .videoHolder').fadeIn('medium');
+                }, 400)
+            });
+        }
         
     });
     
@@ -47,9 +65,12 @@ function actions() {
         if ($(this).hasClass('active')){
             return false;
         } else {
+            $('.videoList>ul>li.active').addClass('watched');
+            $('.videoList>ul>li').removeClass('active');
+            $(this).addClass('active');
             var videoID = $(this).data('hash');
             $('.container .videoHolder').fadeOut('medium', function() {
-                $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>');
+                $('.container .videoHolder').html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoID + '?autoplay=1&showinfo=0" frameborder="0" allowfullscreen></iframe>');
                 setTimeout(function() {
                     $('.container .videoHolder').fadeIn('medium');
                 }, 400)
@@ -81,7 +102,6 @@ function formatSecondsAsTime(secs) {
     } else {
         return hr + ':' + min + ':' + sec;
     }
-
 }
 
 function afterLoaded() {
