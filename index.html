@@ -19,7 +19,7 @@
 
         <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body>
+    <body onload="loaded()">
 
         <div class="wrapper">
             <div class="wHolder">
@@ -74,7 +74,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="videoList">
+                        <div class="videoList" id="videoList">
                             <ul class="clearfix" id="scrollerMenu">
                                 <li data-hash="I5j6yjYX7Eo" class="invisible">
                                     <a>
@@ -332,4 +332,23 @@
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
     <script src="assets/js/vendor/cheet.min.js"></script>
     <script src="assets/js/main.js"></script>
+    
+    <script src="assets/js/vendor/iscroll.js"></script>
+    
+    <script type="text/javascript">
+        var myScroll;
+        function loadedd () {
+            myScroll = new IScroll('#videoList', {
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: false,
+                useTransition: true,
+                mouseWheelSpeed: 5
+            });
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    </script>
+    
 </html>

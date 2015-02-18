@@ -68,7 +68,7 @@ function actions() {
         
     });
     
-    $('.videoList>ul>li').click(function() {
+    $('.videoList ul li').click(function() {
         if ($(this).hasClass('active')){
             return false;
         } else {

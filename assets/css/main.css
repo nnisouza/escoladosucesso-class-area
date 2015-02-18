@@ -141,19 +141,19 @@ textarea {
     width: 100%;
     position: relative;
 }
-.wrapper .content .sidebar{
+.wrapper .sidebar{
     width: 325px;
     height: 100%;
     float: left;
     position: absolute;
     z-index: 10;
 }
-.wrapper .content .sidebar .sidebarHeader{
+.wrapper .sidebar .sidebarHeader{
     width: 100%;
     height: 52px;
     border-bottom: 1px solid #f8f8f8;
 }
-.wrapper .content .sidebar .sidebarHeader h2{
+.wrapper .sidebar .sidebarHeader h2{
     display: inline-block;
     height: 52px;
     float: left;
@@ -166,13 +166,13 @@ textarea {
     font-size: 18px;
     text-transform: uppercase;
 }
-.wrapper .content .sidebar .sidebarHeader .videoCtrl{
+.wrapper .sidebar .sidebarHeader .videoCtrl{
     float: right;
     list-style: none;
     padding: 0;
     margin: 0 28px 0 0;
 }
-.wrapper .content .sidebar .sidebarHeader .videoCtrl li{
+.wrapper .sidebar .sidebarHeader .videoCtrl li{
     height: 26px;
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
@@ -181,31 +181,31 @@ textarea {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.wrapper .content .sidebar .sidebarHeader .videoCtrl li:hover{
+.wrapper .sidebar .sidebarHeader .videoCtrl li:hover{
     opacity: 0.7;
 }
-.wrapper .content .sidebar .sidebarHeader .videoCtrl li i{
+.wrapper .sidebar .sidebarHeader .videoCtrl li i{
     font-size: 28px;
 }
-.wrapper .content .sidebar .videoList{
+.wrapper .sidebar .videoList{
     overflow: hidden;
     position: relative;
 }
-.wrapper .content .sidebar .videoList ul{
+.wrapper .sidebar .videoList ul{
     list-style: none;
     padding: 0;
     margin: 0;
     position: absolute;
     left: 0;
 }
-.wrapper .content .sidebar .videoList ul li{
+.wrapper .sidebar .videoList ul li{
     height: 42px;
     cursor: pointer;
 }
-.wrapper .content .sidebar .videoList ul li:hover{
+.wrapper .sidebar .videoList ul li:hover{
     background: rgba(139, 167, 124, 0.78);
 }
-.wrapper .content .sidebar .videoList ul li span.status{
+.wrapper .sidebar .videoList ul li span.status{
     width: 44px;
     float: left;
     text-align: center;
@@ -214,14 +214,14 @@ textarea {
     box-sizing: border-box;
     border-bottom: 1px solid #fff;
 }
-.wrapper .content .sidebar .videoList ul li span.status i{
+.wrapper .sidebar .videoList ul li span.status i{
     color: #ccc;
 }
-.wrapper .content .sidebar .videoList ul li:hover span.status i,
-.wrapper .content .sidebar .videoList ul li.active span.status i{
+.wrapper .sidebar .videoList ul li:hover span.status i,
+.wrapper .sidebar .videoList ul li.active span.status i{
     color: #fff;
 }
-.wrapper .content .sidebar .videoList ul li span.name{
+.wrapper .sidebar .videoList ul li span.name{
     float: left;
     height: 42px;
     border-left: 1px solid #eaeaea;
@@ -235,11 +235,11 @@ textarea {
     color: #909090;
     overflow: hidden;
 }
-.wrapper .content .sidebar .videoList ul li:hover span.name,
-.wrapper .content .sidebar .videoList ul li.active span.name{
+.wrapper .sidebar .videoList ul li:hover span.name,
+.wrapper .sidebar .videoList ul li.active span.name{
     color: #fff;
 }
-.wrapper .content .sidebar .videoList ul li span.timing{
+.wrapper .sidebar .videoList ul li span.timing{
     float: left;
     height: 42px;
     border-bottom: 1px solid #eaeaea;
@@ -247,7 +247,7 @@ textarea {
     display: block;
     width: 75px;
 }
-.wrapper .content .sidebar .videoList ul li span.timing span{
+.wrapper .sidebar .videoList ul li span.timing span{
     width: 50px;
     height: 22px;
     display: block;
@@ -265,8 +265,8 @@ textarea {
     transition: all 0.3s ease;
 */
 }
-.wrapper .content .sidebar .videoList ul li:hover span.timing span,
-.wrapper .content .sidebar .videoList ul li.active span.timing span{
+.wrapper .sidebar .videoList ul li:hover span.timing span,
+.wrapper .sidebar .videoList ul li.active span.timing span{
     background: #fff;
     color: #8ba77c;
 }
